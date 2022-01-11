@@ -20,7 +20,9 @@ alt.on('leftVehicle', (vehicle, seat) => {
     hud.destroy()
 
 })
-alt.setInterval(()=> {
+
+
+alt.everyTick(() => {
     if(!isVehicle) return;
     if(!localPlayer.vehicle){
         natives.displayRadar(false)
@@ -45,7 +47,6 @@ alt.setInterval(()=> {
 		CurrentCalcRpm:CalcRpm,
     }
     hud.emit('speedometer:data', data)
-}, 100)
-
+})
 
 
